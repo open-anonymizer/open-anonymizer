@@ -21,7 +21,7 @@ app = typer.Typer()
 @app.callback()
 def callback():
     """
-    De-identify your texts
+    Anonymize your texts
     """
 
 
@@ -43,10 +43,10 @@ def init():
 
 @app.command()
 def text(
-    text: str = typer.Argument(..., help="Text to de-identify"),
+    text: str = typer.Argument(..., help="Text to anonymize"),
     entity: List[str] = typer.Option(
         ["PER", "LOC", "ORG", "DATE", "PHONE", "NUMBER", "EMAIL"],
-        prompt="Select the entities you want to de-identify",
+        prompt="Select the entities you want to anonymize",
     ),
     no_context: bool = typer.Option(False),
 ):
@@ -96,11 +96,11 @@ def text(
 @app.command()
 def batch(
     input: Path = typer.Option(None, prompt="Path to your original file", exists=True),
-    col: List[str] = typer.Option(None, prompt="Which columns do you want to de-identify?"),
-    output: Path = typer.Option("results.csv", prompt="Path to de-identified file"),
+    col: List[str] = typer.Option(None, prompt="Which columns do you want to anonymize?"),
+    output: Path = typer.Option("results.csv", prompt="Path to anonymized file"),
     entity: List[str] = typer.Option(
         ["PER", "LOC", "ORG", "DATE", "PHONE", "NUMBER", "EMAIL"],
-        prompt="Select the entities you want to de-identify",
+        prompt="Select the entities you want to anonymize",
     ),
     replace_address: bool = typer.Option(
         True, prompt="Do you want to remove terms of address, like Herr or Frau?"
@@ -136,7 +136,7 @@ def batch(
     df = pd.read_csv(input)
 
     typer.echo("=======================================")
-    typer.echo("Start de-identifying your data")
+    typer.echo("Start anonymizing your data")
     tqdm.pandas()
     for c in cols:
         df[c] = df.progress_apply(

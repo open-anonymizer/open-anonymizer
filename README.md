@@ -1,6 +1,6 @@
-# Open-Anonymizer
+# Open Anonymizer
 
-Open-Anonymizer is a natural language processing software that anonymizes German texts. Open-Anonymizer uses a XLM-RoBERTa model for anonymizing `persons/names`, `locations`, `organizations` and a rule-based approach for anonymizing `dates`, `phone numbers`, `other numbers` and `emails`.
+Open Anonymizer is a natural language processing software that anonymizes German texts. Open Anonymizer uses a XLM-RoBERTa model for anonymizing `persons/names`, `locations`, `organizations` and a rule-based approach for anonymizing `dates`, `phone numbers`, `other numbers` and `emails`.
 
 ![Screenshot CLI](screenshot_cli_text.png?raw=true)
 
@@ -27,7 +27,7 @@ Or if you want to use the command line interface, follow these steps.
 
 ## Further information
 
-Open-Anonymizer is a part of our Master Thesis for the Mannheim Master of Applied Data Science & Measurement written by Dimitri Epp and Markus Nutz.
+Open Anonymizer is a part of our Master Thesis for the Mannheim Master of Applied Data Science & Measurement written by Dimitri Epp and Markus Nutz.
 
 ## License 
 
